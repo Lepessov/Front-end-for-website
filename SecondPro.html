@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="second.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+    <script type="text/x-template" id="modal-template">
+        <transition name="modal">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-container">
+  
+                <div class="modal-header">
+                  <slot name="header">
+                    
+                  </slot>
+                </div>
+  
+                <div class="modal-body">
+                  <slot name="body">
+                         Email
+                  </slot>
+                  <input type="text" placeholder = "Type your email..."/>
+                </div>
+                
+                <div class="modal-body">
+                    <slot name="body">
+                           Password
+                    </slot>
+                    <input type="text" placeholder = "Type your pasword..."/>
+                  </div>
+                <div class="modal-footer">
+                  <slot name="footer">
+        
+                    <button class="modal-default-button" @click="$emit('close')">
+                      OK
+                    </button>
+                  </slot>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </script>
+</head>
+<body>
+    
+        <header>
+            <div class="head_nav">
+                <div class="logo">
+                  <a href="index.html"><img src="images/logo.png" alt=""></a>
+                    <div class="name">
+                        <h3>Ustem</h3>
+                        <p>robotics</p>
+                    </div>
+                </div>
+                
+                <div class="nav">   
+                        <div class="nav-tabs">
+                            <a href="#">Courses  </a>
+                            <a href="#">Why us?  </a>
+                            <a href="#">FAQ  </a>
+                            <a href="#">Classroom  </a>
+                            <a href="#">Address</a>
+                        </div>
+                        <div id="app">
+                            <button id="show-modal" @click="showModal = true">Login</button>
+                          
+                            <modal v-if="showModal" @close="showModal = false">
+                           
+                              <h3 slot="header">Ustem Robotics</h3>
+                            </modal>
+                          </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-second">
+                <main>
+                    <div class="title">
+                        <h1>Programming</h1>
+                        <p>Learn by playing games!  </p>
+                    </div>
+                    <div class="recourses">
+                        <div class="res">
+                            <div class="tablichka" id="spacex1">Python</div>
+                                <img src="resourse/py.jpg" alt="">
+                                <h3>Python is an interpreted level</h3>
+                            
+                        
+                        </div>
+                        <div class="res">  
+                            <div class="tablichka" id="spacex1">C++</div>
+                                <img src="resourse/сpp.jpg" alt="">
+                            
+                    
+                                <h3>C++ is a general-purpose </h3>
+                            
+                        </div>
+                        <div class="res">
+                            <div class="tablichka" id="spacex1">JAVA</div>
+                                <img src="resourse/java.png" alt="">
+                            
+                            
+                                    <h3>Java is a high-level </h3>
+                            
+                        </div>
+                    </div>
+                    <div class="tablichka1">
+                        <h2>Teachers</h2>
+                    </div>
+                    <div class  = "teachers">
+
+                        <div class="container">
+                            <div class="card">
+                                <div class="front">
+                                    <img src="teachers/t1.jpg" alt="icon">
+                                </div>
+                                <div class="back">
+                                    <h1>Ali Baizhuman</h1>
+                                    <hr>
+                                    <p>In the USA or Australia, require an associate or Bachelor's degree. Community colleges in the United States offer preschool.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="card">
+                                <div class="front">
+                                    <img src="teachers/t2.jpg"> 
+                                </div>
+                                <div class="back">
+                                    <h1>Dias Galikhanov</h1>
+                                    <hr>
+                                    <p>Bachelor of Science in General Education
+                                       University of Nebraska, Lincoln, NE
+                                       Completion: 2016.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container">
+                            <div class="card">
+                                <div class="front">
+                                    <img src="teachers/t3.jpg"> 
+                                </div>
+                                <div class="back">
+                                    <h1>Daulet Lepessov</h1>
+                                    <hr>
+                                    <p>Online Bachelor of Arts in Elementary Education (Nevada Elementary Licensure)
+                                      National University, La Jolla, CA
+                                      Completion: 2016</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="container">
+                            <div class="card">
+                                <div class="front">
+                                    <img src="teachers/t4.jpg">
+                                </div>
+                                <div class="back">
+                                    <h1>Kalizhanov Galymzhan</h1>
+                                    <hr>
+                                    <p>High School Teacher—Chemistry
+                                      Louis Pasteur High School, Chicago, IL
+                                      September 2015–July 2018</p>
+                                </div>
+                            </div>
+                        </div> 
+                      
+                    </div>
+
+
+                    <div class = "Review">
+                        <div class="tablichka1"><h2>Review</h2></div>
+                       <div class = "reviewimages">
+                        <div class="re1">
+                          <img img class = "b"  src="review//mark.png"width = 400px , height = 350px>
+                          <div class="re1_content">
+                            <h5 class = "a">M.Zuckerberg</h5>
+                            <h2 class = "c">"People developed planes first and then took care of flight safety. If people were focused on safety first, no one would ever have built a plane."</h2>
+                          </div>
+                        </div>
+                        <div class="re1">
+                            <img class = "b" src="review//aitma.jpg" width = 400px , height = 350px>
+                          <div class="re1_content">
+                            <h5 class = "a">A.K.Aimagambetov</h5>
+                            <h2 class = "c">"Robotics is an applied science dealing with the development of automated technical systems. "</h2>
+                          </div>
+                          
+                         
+                        </div>
+                        
+                        <div class="re1">
+                          <img img class = "b" src="review//arman.jpg"width = 400px , height = 350px>
+                          <div class="re1_content">
+                            <h5 class = "a">A.Suleimenov</h5>
+                            <h2 class = "c">"People developed planes first and then took care of flight safety. If people were focused on safety first, no one would ever have built a plane."</h2>
+                          </div>
+                        </div>
+                       
+                    
+                      </div>
+                      <div class="buttom-container">
+                        <!-- <hr class="gorizantialLine2"> -->
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1O-NqrfZbKxVe6TVcmijBLlZOYs7buLfzqwVyYhsCOeH7iQ/viewform" target="_blank"><button class="buttom">Try lesson</button></a>
+
+                     </div>
+                      </div>
+               
+                </main>
+                <footer>
+                    <div class="foot-div">
+                        <div class="foot">
+                            <h1>USTEM Robotics</h1>
+                            <div class="item">© 2021 All rights reserved</div>
+                        </div>
+                        <div class="foot">
+                          <p> <a href="index.html">Courses  </a> </p> 
+                          <p> <a href="index.html">Why us?  </a></p>
+                           <p><a href="index.html">Partners </a></p>
+                           <p><a href="index.html">Classroom  </a></p>
+                           <p><a href="index.html">Address</a></p>
+                       </div>
+                        <div class="foot">
+                          <p> <a>Follow us</a></p>
+                          <p> <a href = "https://www.facebook.com/profile.php?id=100027924128497">Facebook</a></p>
+                          <p> <a href = "https://t.me/b_ali_nomad">Telegram</a> </p>
+                          <p> <a href = "https://www.instagram.com/b_ali_nomad/">Instagram</a> </p>
+                           <p> <a href = "https://www.linkedin.com/in/ali-baizhuman-5a7474219/">LinkedIn</a> </p>
+                       </div>
+                        <div class="foot">
+                            <p>News Letter</p>
+                            <p>If you have a question</p>
+                            <form>
+                              <div class="inputs">
+                                <input type="text" name="" id="text1">
+                                <button class = "btnsend" type = "reset">Send</button>
+                            </div>
+                          </form>
+            
+                        </div>
+                    </div>
+                    
+                </footer>
+            </div>
+            
+</body>
+<script>
+    // register modal component
+    Vue.component("modal", {
+      template: "#modal-template"
+    });
+
+    // start app
+    new Vue({
+      el: "#app",
+      data: {
+         showModal: false
+      }
+      
+      
+    });
+  </script>
+<script src="script.js"></script>
+</html>
